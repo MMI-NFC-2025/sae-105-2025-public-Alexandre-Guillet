@@ -7,176 +7,210 @@
   </head>
   <body>
     <header class="header">
-      <div class="logo">
-        <h1>SAVOU'FEST</h1>
-        <div>
-            <h2>Accueil</h2>
+      <div class="header__logo-container">
+        <h1 class="header__logo-title">SAVOU'FEST</h1>
+        <div class="header__page-title">
+          <h2 class="header__page-title-text">Accueil</h2>
+        </div>
       </div>
 
       <nav class="main__nav">
         <ul>
-          <li><a href="#accueil">Accueil</a></li>
-          <li><a href="#artistes">Artistes</a></li>
-          <li><a href="#programme">Programme</a></li>
-          <li><a href="#info">Infos Pratiques</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li class="nav__item">
+            <a href="#accueil" class="nav__link">Accueil</a>
+          </li>
+          <li class="nav__item">
+            <a href="#artistes" class="nav__link">Artistes</a>
+          </li>
+          <li class="nav__item">
+            <a href="#programme" class="nav__link">Programme</a>
+          </li>
+          <li class="nav__item">
+            <a href="#info" class="nav__link">Infos Pratiques</a>
+          </li>
+          <li class="nav__item">
+            <a href="#contact" class="nav__link">Contact</a>
+          </li>
         </ul>
       </nav>
     </header>
-    <main>
-      <section class="hero__section">
+    <main class="main-content">
+      <section class="hero">
         <div class="hero__content">
-          <img src="assets/hero.jpg" alt="Illustration guitare du festival" />
-          <h3 class="h3---hero">SAVOU'FEST</h3>
-          <span>15 - 17 Août 2025</span>
-          <a href="#billeterie" class="cta__button"
-            >Vos Billets n'attendent que vous !
+          <img
+            src="assets/hero.jpg"
+            alt="Illustration guitare du festival"
+            class="hero__image"
+          />
+          <h3 class="hero__title">SAVOU'FEST</h3>
+          <p class="hero__subtitle">15 - 17 Août 2025</p>
+          <a href="#billeterie" class="hero__cta-button"
+            >Vos Billets n'attendent que vous !</a
+          >
+        </div>
+      </section>
+
+      <section class="vertical-cards-grid">
+        <div class="card card--vertical">
+          <a href="pagescenes.html" class="card__link">
+            <div class="card__image-container">
+              <img
+                src="assets/lecteur-de-musique.png"
+                alt="Note de musique"
+                class="card__image"
+              />
+            </div>
+            <div class="card__body">
+              <h4 class="card__title">3 Scènes</h4>
+              <h5 class="card__text">Electro, Hip-Hop & Pop</h5>
+            </div>
+          </a>
+        </div>
+
+        <div class="card card--vertical">
+          <a href="pageartistes.html" class="card__link">
+            <div class="card__image-container">
+              <img
+                src="assets/utilisateurs.png"
+                alt="Représentation d'une personne"
+              />
+            </div>
+            <div class="card__body">
+              <h4 class="card__title">Artistes</h4>
+              <h5 class="card__text">Nationaux & Internationaux</h5>
+            </div>
+          </a>
+        </div>
+
+        <div class="card card--vertical">
+          <a href="pageprogramme.html">
+            <div class="verticalcard__image">
+              <img src="assets/calendrier.png" alt="Calendrier" />
+            </div>
+            <div class="card__body">
+              <h4 class="card__title">3 Jours</h4>
+              <h5 class="card__text">15-17 Août 2025</h5>
+            </div>
           </a>
         </div>
       </section>
+
+      <section class="action-cards-list">
+        <div class="card card--action card--orange">
+          <a href="pageprogramme.html">
+            <div class="card__body">
+              <h4 class="card__title">Programme Complet</h4>
+              <h5 class="card__text">Découvre tous les artistes et horaires</h5>
+            </div>
+          </a>
+        </div>
+
+        <div class="card card--action card--cyan">
+          <a href="pageartistes.html">
+            <div class="card__body">
+              <h4 class="card__title">Liste des Artistes</h4>
+              <h5 class="card__text">
+                Les artistes incontournables de cette édition 2025
+              </h5>
+            </div>
+          </a>
+        </div>
+
+        <div class="card card--action card--orange">
+          <a href="pagefestival.html">
+            <div class="card__body">
+              <h4 class="card__title">Le Festival</h4>
+              <h5 class="card__text">
+                Notre histoire, nos valeurs et notre équipe
+              </h5>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="partners">
+        <div class="partners__header">
+          <h2 class="partners__title">Nos Partenaires</h2>
+        </div>
+        <div class="sponsor-grid">
+          <div class="sponsor">
+            <div class="sponsor__body">
+              <p class="sponsor__name">Radio Groove</p>
+            </div>
+          </div>
+
+          <div class="sponsor">
+            <div class="sponsor__body">
+              <p class="sponsor__name">Energy Drink Co.</p>
+            </div>
+          </div>
+
+          <div class="sponsor">
+            <div class="sponsor__body">
+              <p class="sponsor__name">Festival Alliance</p>
+            </div>
+          </div>
+
+          <div class="sponsor">
+            <div class="sponsor__body">
+              <p class="sponsor__name">City Tours</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
-    <section class="HomepageVerticalCards">
-      <div class="verticalcard">
-        <a href="pagescenes.html">
-          <div class="verticalcard__image">
-            <img src="assets/lecteur-de-musique.png" alt="Note de musique" />
-          </div>
-          <div class="verticalcard__body">
-            <h4 class="verticalcard__title">3 Scènes</h4>
-            <h5 class="verticalcard__text">Electro, Hip-Hop & Pop</h5>
-          </div>
-        </a>
-      </div>
-
-      <div class="verticalcard">
-        <a href="pageartistes.html">
-          <div class="verticalcard-image">
-            <img
-              src="assets/utilisateurs.png"
-              alt="Représentation d'une personne"
-            />
-          </div>
-          <div class="verticalcard__body">
-            <h4 class="verticalcard__title">Artistes</h4>
-            <h5 class="verticalcard__text">Nationaux & Internationaux</h5>
-          </div>
-        </a>
-      </div>
-
-      <div class="verticalcard">
-        <a href="pageprogramme.html">
-          <div class="verticalcard__image">
-            <img src="assets/calendrier.png" alt="Calendrier" />
-          </div>
-          <div class="verticalcard__body">
-            <h4 class="verticalcard__title">3 Jours</h4>
-            <h5 class="verticalcard__text">15-17 Août 2025</h5>
-          </div>
-        </a>
-      </div>
-    </section>
-    <section class="HomepageCards">
-      <div class="card">
-        <a href="pageprogramme.html">
-          <div class="card__body">
-            <h4 class="card__title">Programme Complet</h4>
-            <h5 class="card__text">Découvre tous les artistes et horaires</h5>
-          </div>
-        </a>
-      </div>
-
-      <div class="card">
-        <a href="pageartistes.html">
-          <div class="card__body">
-            <h4 class="card__title">Liste des Artistes</h4>
-            <h5 class="card__text">
-              Les artistes incontournables de cette édition 2025
-            </h5>
-          </div>
-        </a>
-      </div>
-
-      <div class="card">
-        <a href="pagefestival.html">
-          <div class="card__body">
-            <h4 class="card__title">Le Festival</h4>
-            <h5 class="card__text">
-              Notre histoire, nos valeurs et notre équipe
-            </h5>
-          </div>
-        </a>
-      </div>
-    </section>
-    <section class="HomepageSponCard">
-      <div>
-        <h2>Nos Partenaires</h2>
-      </div>
-      <div class="sponsorcard">
-        <div class="sponsorcard__body">
-          <p class="sponsorcard__title">Radio Groove</p>
-        </div>
-      </div>
-
-      <div class="sponsorcard">
-        <div class="sponsorcard__body">
-          <p class="sponsorcard__title">Energy Drink Co.</p>
-        </div>
-      </div>
-
-      <div class="sponsorcard">
-        <div class="sponsorcard__body">
-          <p class="sponsorcard__title">Festival Alliance</p>
-        </div>
-      </div>
-
-      <div class="sponsorcard">
-        <div class="sponsorcard__body">
-          <p class="sponsorcard__title">City Tours</p>
-        </div>
-      </div>
-    </section>
     <footer class="footer">
-<footer class="footer">
-    <div class="footer__content">
-        
+      <div class="footer__content">
         <h2 class="footer__title">SAVOU'FEST</h2>
-        
         <div class="footer__contact">
-            <p>contact@savoufest.fr</p>
-            <p>+33 04 ** ** ** **</p>
+          <p>contact@savoufest.fr</p>
+          <p>+33 04 ** ** ** **</p>
         </div>
-        
+
         <div class="social-links">
-            <a href="URL_INSTAGRAM" target="_blank" aria-label="Instagram" class="social-links__item">
-                <i class="icon-instagram"></i> 
-            </a>
-            
-            <span class="social-links__separator">•</span>
-            
-            <a href="URL_FACEBOOK" target="_blank" aria-label="Facebook" class="social-links__item">
-                <i class="icon-facebook"></i>
-            </a>
-            
-            <span class="social-links__separator">•</span>
-            
-            <a href="URL_YOUTUBE" target="_blank" aria-label="YouTube" class="social-links__item">
-                <i class="icon-youtube"></i>
-            </a>
+          <a
+            href="URL_INSTAGRAM"
+            target="_blank"
+            aria-label="Instagram"
+            class="social-links__item"
+          >
+            <img src="assets/Instagram.webp" alt="Instagram" />
+          </a>
+          <span class="social-links__separator">•</span>
+          <a
+            href="URL_FACEBOOK"
+            target="_blank"
+            aria-label="Facebook"
+            class="social-links__item"
+          >
+            <img src="assets/Facebokk.webp" alt="Facebook" />
+          </a>
+          <span class="social-links__separator">•</span>
+          <a
+            href="URL_YOUTUBE"
+            target="_blank"
+            aria-label="YouTube"
+            class="social-links__item"
+          >
+            <img src="assets/YouTube.webp" alt="YouTube" />
+          </a>
         </div>
-        
+
         <div class="footer__legal">
-            <p class="footer__legal-links">
-                <a href="#mentions-legales" class="footer__legal-link">Mentions légales</a> 
-                <span class="footer__legal-separator">•</span> 
-                <a href="#cgv" class="footer__legal-link">CGV</a> 
-                <span class="footer__legal-separator">•</span> 
-                <a href="#confidentialite" class="footer__legal-link">Confidentialité</a>
-            </p>
-            <p class="footer__copyright">© 2025 SAVOU'FEST</p>
+          <p class="footer__legal-links">
+            <a href="#mentions-legales" class="footer__legal-link"
+              >Mentions légales</a
+            >
+            <span class="footer__legal-separator">•</span>
+            <a href="#cgv" class="footer__legal-link">CGV</a>
+            <span class="footer__legal-separator">•</span>
+            <a href="#confidentialite" class="footer__legal-link"
+              >Confidentialité</a
+            >
+          </p>
+          <p class="footer__copyright">© 2025 SAVOU'FEST</p>
         </div>
-        
-    </div>
-</footer>
+      </div>
     </footer>
   </body>
 </html>
