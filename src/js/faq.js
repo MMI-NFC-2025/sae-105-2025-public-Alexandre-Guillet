@@ -1,5 +1,4 @@
 // FAQ - Gestion de l'ouverture des items FAQ
-
 document.addEventListener("DOMContentLoaded", function () {
   const faqList = document.querySelector(".faq__list");
   if (!faqList) return;
