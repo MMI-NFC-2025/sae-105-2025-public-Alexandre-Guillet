@@ -1,0 +1,817 @@
+@import url("layout/header.css");
+/* --- src/css/style.css --- */
+
+/* 1. Variables CSS (Couleurs & Fontes) */
+:root {
+  --shadow-light: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 6px 15px rgba(0, 0, 0, 0.15);
+
+  /* Espacement de base */
+  --spacing-main: 20px;
+  /* Couleurs principales (définies pour éviter les variables non résolues) */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-gray-dark: #222222;
+  --color-gray-light: #f6f6f6;
+  --color-orange-main: #ff7a00;
+  --color-cyan-main: #00a8cc;
+
+  /* Border-radius */
+  --border-radius-card: 12px;
+  --border-radius-button: 8px;
+
+  /* Genres */
+  --genre-electro: #6c5ce7;
+  --genre-hiphop: #fd79a8;
+  --genre-pop: #00b894;
+  --genre-rock: #d63031;
+}
+
+/* 2. Reset / Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif; /* Poppins est une bonne candidate pour ce style */
+  color: var(--color-gray-dark);
+  background-color: var(--color-white); /* Fond principal blanc */
+  line-height: 1.6;
+}
+
+/* Importez Poppins depuis Google Fonts dans votre <head> pour un rendu parfait */
+/* <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet"> */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Conteneur principal de contenu */
+.main-content {
+  padding: var(--spacing-main);
+  padding-top: 0;
+  /* Ensure main content sits below header and does not overlap */
+  clear: both;
+}
+
+/* Titres de sections */
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  color: var(--color-gray-dark);
+}
+
+.partners__title,
+.contact-form-section__title,
+.contact-info__title {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 30px 0 20px;
+}
+
+/* --- Composants Réutilisables : Cartes (Cards) --- */
+
+.card {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-card);
+  box-shadow: var(--shadow-light);
+  margin-bottom: var(--spacing-main);
+  overflow: hidden; /* Important pour les images dans les cartes */
+}
+
+.card__link {
+  display: block;
+  padding: var(--spacing-main);
+}
+
+.card__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.card__text {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* 3. Style des Cartes d'Action (Orange et Cyan sur la page d'accueil) */
+
+.card--action {
+  padding: 0; /* Le padding sera sur le lien interne */
+  transition: transform 0.2s;
+}
+
+.card--action a {
+  padding: var(--spacing-main);
+}
+
+.card--action.card--orange {
+  background-color: var(--color-orange-main);
+  color: var(--color-white);
+}
+
+.card--action.card--cyan {
+  background-color: var(--color-cyan-main);
+  color: var(--color-white);
+}
+
+.card--action .card__text {
+  color: var(--color-white);
+  opacity: 0.9;
+}
+
+.card--action:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+/* 4. Filtres (utilisés sur Programme et Artistes) */
+.filters {
+  margin-bottom: 20px;
+}
+
+.filters__group {
+  margin-bottom: 20px;
+}
+
+.filters__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.filters__options {
+  display: flex;
+  overflow-x: auto; /* Permet le défilement horizontal */
+  padding-bottom: 5px; /* Pour laisser de l'espace au scrollbar si elle apparaît */
+  -webkit-overflow-scrolling: touch; /* Améliore le scroll sur iOS */
+  gap: 10px; /* Espace entre les boutons */
+}
+
+.filters__button {
+  flex-shrink: 0; /* Empêche les boutons de se réduire */
+  background: var(--color-gray-light);
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius-button);
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.filters__button:hover {
+  background-color: #e0e0e0;
+}
+
+.filters__button--active {
+  background-color: var(--color-cyan-main);
+  border-color: var(--color-cyan-main);
+  color: var(--color-white);
+}
+
+/* 5. Pied de Page (Footer) */
+
+.footer {
+  background-color: var(--color-cyan-main);
+  color: var(--color-white);
+  padding: var(--spacing-main) 0;
+  text-align: center;
+}
+
+.footer__content {
+  max-width: 400px; /* Limite la largeur du contenu du footer pour un meilleur look mobile */
+  margin: 0 auto;
+  padding: 0 var(--spacing-main);
+}
+
+.footer__title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  color: var(--color-white);
+}
+
+.footer__contact p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.social-links__item {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+
+.social-links__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.social-links__separator {
+  margin: 0 10px;
+  font-size: 1.5rem;
+  font-weight: 100;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.footer__legal {
+  font-size: 0.85rem;
+  margin-top: 15px;
+}
+
+.footer__legal-links {
+  margin-bottom: 5px;
+}
+
+.footer__legal-separator {
+  margin: 0 5px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.footer__legal-link {
+  color: var(--color-white);
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.footer__legal-link:hover {
+  opacity: 1;
+}
+
+.header {
+  background-color: var(--color-orange-main);
+  background-image: url("assets/header-bg.jpg"); /* Image de fond (ajuster le chemin) */
+  background-size: cover;
+  background-position: center bottom;
+  color: var(--color-white);
+  padding: calc(var(--spacing-main) * 1);
+  padding-bottom: calc(var(--spacing-main) * 1.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden; /* Pour contenir les images de fond */
+}
+
+/* Pseudo-élément pour l'image et l'ombrage du header */
+.header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Ajout d'un dégradé pour mieux faire ressortir le texte */
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  z-index: 1;
+}
+
+.header__logo-container {
+  z-index: 2;
+}
+
+.header__logo-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.header__page-title {
+  display: flex;
+  align-items: baseline;
+}
+
+.header__page-title-text {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-white);
+}
+
+/* Le bouton Menu (Hamburger) */
+.header__menu-toggle {
+  background: none;
+  border: none;
+  color: var(--color-white);
+  cursor: pointer;
+  font-size: 2rem;
+  z-index: 3;
+  /* Remplacement par l'icône hamburger pour les maquettes */
+  width: 30px;
+  height: 25px;
+  position: relative;
+  padding: 0;
+}
+
+.header__menu-icon,
+.header__menu-icon::before,
+.header__menu-icon::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-white);
+  position: absolute;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.header__menu-icon {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.header__menu-icon::before {
+  top: -10px;
+}
+
+.header__menu-icon::after {
+  top: 10px;
+}
+
+/* Menu de navigation (masqué par défaut) */
+.main__nav {
+  /* Style pour la maquette : fond orange pleine page */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-orange-main);
+  z-index: 100;
+  display: flex; /* Centrage du contenu */
+  justify-content: center;
+  align-items: center;
+  /* Masqué par défaut */
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Simuler l'ouverture du menu (à gérer avec JavaScript) */
+/* .main__nav.is-open { transform: translateX(0); } */
+
+.main__nav ul {
+  list-style: none;
+  text-align: center;
+}
+
+.nav__item {
+  margin: 30px 0;
+}
+
+.nav__link {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-white);
+  transition: opacity 0.2s;
+}
+
+.nav__link:hover {
+  opacity: 0.8;
+}
+
+.hero {
+  position: relative;
+  /* The hero is placed after the header to avoid overlap */
+  margin-top: 0;
+  padding-top: 10px;
+}
+
+.hero__image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius-card); /* Coins arrondis pour l'image */
+  object-fit: cover;
+  display: block;
+  box-shadow: var(--shadow-medium);
+}
+
+.hero__content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: var(--spacing-main);
+  color: var(--color-white);
+  /* Dégradé sur l'image pour un meilleur contraste du texte */
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  width: 100%;
+  border-radius: 0 0 var(--border-radius-card) var(--border-radius-card);
+}
+
+.hero__title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
+.hero__subtitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.hero__cta-button {
+  display: block;
+  width: 100%;
+  background-color: var(--color-orange-main);
+  color: var(--color-white);
+  text-align: center;
+  padding: 15px 20px;
+  border-radius: var(--border-radius-button);
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: var(--shadow-medium);
+  transition: background-color 0.2s;
+}
+
+.hero__cta-button:hover {
+  background-color: #e87b00; /* Orange légèrement plus foncé */
+}
+
+/* --- Grille de Cartes Verticales (3 Scènes, Artistes, 3 Jours) --- */
+
+.vertical-cards-grid {
+  display: flex;
+  gap: 15px; /* Espace entre les cartes */
+  overflow-x: auto; /* Permet le défilement horizontal */
+  padding: var(--spacing-main) 0;
+  margin-left: calc(-1 * var(--spacing-main));
+  margin-right: calc(-1 * var(--spacing-main));
+  padding-left: var(--spacing-main);
+  padding-right: var(--spacing-main);
+  -webkit-overflow-scrolling: touch;
+}
+
+.vertical-cards-grid .card {
+  flex-shrink: 0; /* Empêche les cartes de se réduire */
+  width: 120px; /* Largeur fixe pour l'effet de grille défilante */
+  margin-bottom: 0; /* Pas de marge en bas dans une grille Flex */
+  text-align: center;
+  padding: 0;
+}
+
+.vertical-cards-grid .card__link {
+  padding: 15px 10px;
+}
+
+.card__image-container {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 10px;
+}
+
+.card__image-container img {
+  object-fit: contain;
+}
+
+.vertical-cards-grid .card__title {
+  font-size: 1rem;
+}
+
+.vertical-cards-grid .card__text {
+  font-size: 0.75rem;
+  line-height: 1.2;
+}
+
+/* --- Section Découvrir (Action Cards) --- */
+
+.action-cards-list {
+  margin-top: 20px;
+}
+
+.action-cards-list .card {
+  margin-bottom: 15px;
+}
+
+/* Style spécifique pour le titre "Découvrir" */
+.main-content > h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 30px 0 20px;
+}
+
+/* --- Section Partenaires --- */
+
+.sponsor-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 colonnes par ligne */
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.sponsor {
+  background-color: var(--color-white);
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius-card);
+  padding: 15px;
+  text-align: center;
+  box-shadow: var(--shadow-light);
+}
+
+.sponsor__name {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* --- Header Spécifique Programme (Fond Cyan pour la démo) --- */
+.header--programme {
+  background-color: var(--color-cyan-main);
+  /* On peut changer l'image de fond si on veut une image différente */
+  background-image: url("assets/programme-bg.jpg"); /* Exemple */
+}
+
+/* --- Liste des Événements --- */
+
+.event-list {
+  margin-bottom: 30px;
+}
+
+.event-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-card);
+  box-shadow: var(--shadow-light);
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.event-card__artist-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.event-card__details {
+  font-size: 0.9rem;
+  color: #666;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px; /* Espace entre les éléments */
+}
+
+.event-card__details span {
+  display: inline-block;
+}
+
+.event-card__stage,
+.event-card__day {
+  font-weight: 500;
+  color: var(--color-gray-dark);
+}
+
+/* Pastilles de Genre */
+.event-card__genre-pill {
+  padding: 5px 10px;
+  border-radius: var(--border-radius-button);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-white);
+  text-transform: uppercase;
+}
+
+.event-card__genre-pill--electro {
+  background-color: var(--genre-electro);
+}
+
+.event-card__genre-pill--hiphop {
+  background-color: var(--genre-hiphop);
+}
+
+.event-card__genre-pill--pop {
+  background-color: var(--genre-pop);
+}
+
+.event-card__genre-pill--rock {
+  background-color: var(--genre-rock);
+}
+
+/* Bouton Télécharger (CTA) */
+.download-cta {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.download-cta__button {
+  display: inline-block;
+  background-color: var(--color-orange-main);
+  color: var(--color-white);
+  padding: 15px 30px;
+  border-radius: var(--border-radius-button);
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: var(--shadow-medium);
+  transition: background-color 0.2s;
+}
+
+.download-cta__button:hover {
+  background-color: #e87b00;
+}
+
+/* --- Header Spécifique Artistes (Fond Orange) --- */
+.header--artistes {
+  background-color: var(--color-orange-main);
+  background-image: url("assets/artistes-bg.jpg"); /* Exemple */
+}
+
+/* --- Grille des Artistes --- */
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Une seule colonne en mobile */
+  gap: var(--spacing-main);
+  margin-bottom: 30px;
+}
+
+.cards-grid .card {
+  padding: 0; /* Le contenu est stylisé différemment ici */
+  position: relative;
+  overflow: hidden;
+}
+
+.cards-grid .card__link {
+  padding: 0;
+  position: relative;
+  display: block;
+}
+
+.cards-grid .card img {
+  width: 100%;
+  height: 300px; /* Hauteur fixe pour les images */
+  object-fit: cover;
+  display: block;
+}
+
+.cards-grid .card__body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  color: var(--color-white);
+  /* Dégradé pour le texte */
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.cards-grid .card__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.cards-grid .card__text {
+  font-size: 0.9rem;
+  color: var(--color-white);
+  opacity: 0.9;
+}
+
+/* Pastille de genre flottante dans la carte */
+.cards-grid .event-card__genre-pill {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 10;
+}
+
+/* --- Mobile-first responsive rules --- */
+/* Les règles ci-dessus servent de base mobile. On ajoute des breakpoints pour tablettes/desktop. */
+
+@media (min-width: 600px) {
+  /* Small tablets / large phones */
+  .header {
+    padding: 24px;
+  }
+
+  .header__page-title-text {
+    font-size: 2.4rem;
+  }
+
+  .vertical-cards-grid .card {
+    width: 150px;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sponsor-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .hero__title {
+    font-size: 2.6rem;
+  }
+
+  .nav__link {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Desktop and large tablets */
+  .main-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+
+  .header {
+    align-items: center;
+    padding: 40px;
+    padding-bottom: 80px;
+  }
+
+  .header__logo-title {
+    font-size: 1.6rem;
+  }
+
+  .header__page-title-text {
+    font-size: 3rem;
+  }
+
+  .vertical-cards-grid {
+    display: flex;
+    gap: 25px;
+    overflow: visible;
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .vertical-cards-grid .card {
+    width: auto;
+    flex: 1;
+    max-width: 300px;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .sponsor-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .main__nav {
+    position: relative;
+    transform: none;
+    background: transparent;
+    height: auto;
+    display: block;
+  }
+
+  .header__menu-toggle {
+    display: none;
+  }
+
+  .hero__content {
+    position: absolute;
+    left: 40px;
+    bottom: 40px;
+    width: auto;
+    max-width: 60%;
+    background: none;
+  }
+
+  .hero__cta-button {
+    display: inline-block;
+    width: auto;
+  }
+}

@@ -1,0 +1,10 @@
+@import url("../utility.css");
+
+/* Fichier de layout header (normalisé en minuscules)
+   -> Important : garder ici les petites règles spécifiques au header
+   Actuellement la majorité des styles du header sont dans `style.css`.
+*/
+/* Ce fichier a été déplacé vers `src/css/layout/header.css`.
+   Règles originales migrées vers `src/css/style.css` et `src/css/layout/header.css`.
+   Gardez ce fichier comme référence temporaire pendant la réorganisation.
+*/
