@@ -2,6 +2,9 @@
 
 /* Header layout (header + navigation) */
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   background-color: var(--color-orange-main);
   background-size: cover;
   background-position: center bottom;
@@ -11,7 +14,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
   overflow: hidden;
 }
 

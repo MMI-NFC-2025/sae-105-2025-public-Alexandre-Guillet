@@ -2,7 +2,6 @@
 @import url("normalise.css");
 @import url("base.css");
 
-/* Carousel styles for DJ Phenix page */
 .carousel {
   max-width: 900px;
   margin: 2rem auto;
@@ -62,7 +61,6 @@
   }
 }
 
-/* FAQ accordion styles */
 .faq {
   max-width: 900px;
   margin: 2rem auto;
@@ -98,7 +96,6 @@
   font-weight: 600;
 }
 
-/* hide native marker */
 summary {
   list-style: none;
 }
@@ -125,7 +122,6 @@ summary::-webkit-details-marker {
   overflow: hidden;
 }
 
-/* small screens adjustments */
 @media (max-width: 600px) {
   .faq {
     margin: 1rem auto;
