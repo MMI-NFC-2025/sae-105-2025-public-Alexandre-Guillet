@@ -6,49 +6,4 @@
     #a641d5 0,
     #f218b0 100%
   );
-  --h1---titres-de-page: 32px;
-  --small---texte-secondaire: 14px;
-  --h2---sections: 24px;
-  --paragraphe---corps-de-texte: 14px;
-  --h3---nom-d-artiste: 18px;
-  --hero: 48px;
-}
-.d-grad--orange {
-  color: var(--d-grad--orange);
-}
-.d-grad--cyan {
-  color: var(--d-grad--cyan);
-}
-.d-grad--social--instagram- {
-  color: var(--d-grad--social--instagram-);
-}
-.h1---titres-de-page {
-  font-size: var(--h1---titres-de-page);
-  line-height: 0.05;
-  font-weight: 700;
-}
-.small---texte-secondaire {
-  font-size: var(--small---texte-secondaire);
-  line-height: 0.114286;
-  font-weight: 400;
-}
-.h2---sections {
-  font-size: var(--h2---sections);
-  line-height: 0.066667;
-  font-weight: 700;
-}
-.paragraphe---corps-de-texte {
-  font-size: var(--paragraphe---corps-de-texte);
-  line-height: 0.07375;
-  font-weight: 400;
-}
-.h3---nom-d-artiste {
-  font-size: var(--h3---nom-d-artiste);
-  line-height: 0.088889;
-  font-weight: 700;
-}
-.h4---hero {
-  font-size: var(--hero);
-  line-height: 0.033333;
-  font-weight: 700;
 }

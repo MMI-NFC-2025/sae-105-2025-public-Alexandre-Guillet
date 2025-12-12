@@ -3,11 +3,19 @@
   --shadow-medium: 0 6px 15px rgba(0, 0, 0, 0.15);
   --spacing-main: 20px;
   --color-white: #ffffff;
-  --color-black: #000000;
-  --color-gray-dark: #222222;
+  --color-black: #1a1a1a;
+  --color-gray-dark: #1a1a1a;
   --color-gray-light: #f6f6f6;
-  --color-orange-main: #ff7a00;
-  --color-cyan-main: #00a8cc;
+  --color-orange-main: #ff8c00; /* from utility.css --orange-vif */
+  --color-cyan-main: #00ced1; /* from utility.css --cyan-vif */
+  --color-violet: #a641d5; /* from utility.css */
+  --color-rose: #f218b0; /* from utility.css */
+
+  /* Gradients from utility2.css */
+  --gradient-orange: linear-gradient(105deg, #ff8c00 0, #ff6b00 100%);
+  --gradient-cyan: linear-gradient(105deg, #00ced1 0, #00a8aa 100%);
+  --gradient-instagram: linear-gradient(104deg, #a641d5 0, #f218b0 100%);
+
   --border-radius-card: 12px;
   --border-radius-button: 8px;
   --genre-electro: #6c5ce7;
