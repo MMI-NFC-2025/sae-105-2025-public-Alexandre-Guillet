@@ -1,3 +1,5 @@
+/* Menu toggle functionality */
+
 (() => {
   const toggle = document.querySelector(".menu-btn");
   const nav = document.querySelector(".menu");
@@ -19,7 +21,6 @@
     }
   };
 
-  // initialize from attribute or default closed
   const initial = toggle.getAttribute("aria-expanded") === "true";
   setOpen(initial);
 
@@ -27,13 +28,5 @@
     e.preventDefault();
     const isOpen = toggle.getAttribute("aria-expanded") === "true";
     setOpen(!isOpen);
-  });
-
-  // close on escape
-  document.addEventListener("keydown", (evt) => {
-    if (evt.key === "Escape" || evt.key === "Esc") {
-      const isOpen = toggle.getAttribute("aria-expanded") === "true";
-      if (isOpen) setOpen(false);
-    }
   });
 })();
