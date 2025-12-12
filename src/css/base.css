@@ -154,6 +154,27 @@
   color: var(--color-white);
 }
 
+/* Grid layout for artist cards */
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* single column: cards one after another */
+  gap: var(--spacing-main);
+  align-items: start;
+}
+
+.cards-grid .card {
+  margin: 0;
+}
+
+/* Ensure card images don't overflow and don't overlap */
+.card__image,
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
 .hero {
   position: relative;
   margin-top: 0;

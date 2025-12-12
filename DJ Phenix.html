@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <title>SAVOU'FEST - DJ Phenix</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="assets/artgirl.webp" type="image/webp" />
     <link rel="stylesheet" href="src/css/style.css" />
     <script src="src/js/menu.js" defer></script>
   </head>
@@ -88,21 +89,48 @@
         </div>
       </section>
 
-      <section class="artist-media">
-        <div class="artist-media__item artist-media__item--image">
-          <img
-            src="assets/dj-hands.jpg"
-            alt="Mains de DJ sur une platine"
-            class="artist-media__image"
-          />
-        </div>
-
-        <div class="artist-media__item artist-media__item--video">
-          <div class="artist-media__video-placeholder">
-            [Lecteur Vidéo Intégré ici]
+      <div class="carousel" aria-labelledby="carousel-heading">
+        <h2 id="carousel-heading" class="carousel__heading sr-only">
+          Carousel d'images musicales
+        </h2>
+        <div class="carousel__container" role="region" aria-live="polite">
+          <div class="carousel__item">
+            <img src="/assets/img/agenda-01.avif" alt="Image musique 1" />
+          </div>
+          <div class="carousel__item">
+            <img src="/assets/img/agenda-02.avif" alt="Image musique 2" />
+          </div>
+          <div class="carousel__item">
+            <img src="/assets/img/agenda-03.avif" alt="Image musique 3" />
+          </div>
+          <div class="carousel__item">
+            <img src="/assets/img/agenda-04.avif" alt="Image musique 4" />
+          </div>
+          <div class="carousel__item">
+            <img src="/assets/img/agenda-05.avif" alt="Image musique 5" />
           </div>
         </div>
-      </section>
+        <div class="carousel__controls">
+          <button
+            class="carousel__button carousel__button--prev"
+            aria-label="Défiler vers la gauche"
+          >
+            <img
+              src="/assets/icones/icon_arrowcarrousel.svg"
+              alt="fleche gauche"
+            />
+          </button>
+          <button
+            class="carousel__button carousel__button--next"
+            aria-label="Défiler vers la droite"
+          >
+            <img
+              src="/assets/icones/icon_arrowcarrousel.svg"
+              alt="fleche droite"
+            />
+          </button>
+        </div>
+      </div>
     </main>
 
     <footer class="footer">
