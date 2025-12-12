@@ -1,5 +1,70 @@
 @import url("../utility.css");
 
-/* Placeholder footer layout styles.
-   Vous pouvez mettre ici les règles dédiées au footer si besoin.
-*/
+/* Footer layout styles */
+.footer {
+  background-color: var(--color-cyan-main);
+  color: var(--color-white);
+  padding: var(--spacing-main) 0;
+  text-align: center;
+}
+
+.footer__content {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-main);
+}
+
+.footer__title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  color: var(--color-white);
+}
+
+.footer__contact p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+.social-links__item {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+.social-links__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.social-links__separator {
+  margin: 0 10px;
+  font-size: 1.5rem;
+  font-weight: 100;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.footer__legal {
+  font-size: 0.85rem;
+  margin-top: 15px;
+}
+.footer__legal-links {
+  margin-bottom: 5px;
+}
+.footer__legal-separator {
+  margin: 0 5px;
+  color: var(--color-gray-light);
+}
+.footer__legal-link {
+  color: var(--color-white);
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+.footer__legal-link:hover {
+  opacity: 1;
+}

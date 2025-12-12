@@ -1,10 +1,193 @@
 @import url("../utility.css");
 
-/* Fichier de layout header (normalisé en minuscules)
-   -> Important : garder ici les petites règles spécifiques au header
-   Actuellement la majorité des styles du header sont dans `style.css`.
-*/
-/* Ce fichier a été déplacé vers `src/css/layout/header.css`.
-   Règles originales migrées vers `src/css/style.css` et `src/css/layout/header.css`.
-   Gardez ce fichier comme référence temporaire pendant la réorganisation.
-*/
+/* Header layout (header + navigation) */
+.header {
+  background-color: var(--color-orange-main);
+  background-image: url("../assets/hero.jpg");
+  background-size: cover;
+  background-position: center bottom;
+  color: var(--color-white);
+  padding: calc(var(--spacing-main) * 1);
+  padding-bottom: calc(var(--spacing-main) * 1.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  z-index: 1;
+}
+
+.header__logo-container {
+  z-index: 2;
+}
+
+.header__logo-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.header__page-title {
+  display: flex;
+  align-items: baseline;
+}
+
+.header__page-title-text {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-white);
+}
+
+.header__menu-toggle {
+  background: none;
+  border: none;
+  color: var(--color-white);
+  cursor: pointer;
+  font-size: 2rem;
+  z-index: 3;
+  width: 30px;
+  height: 25px;
+  position: relative;
+  padding: 0;
+}
+
+.header__menu-icon,
+.header__menu-icon::before,
+.header__menu-icon::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-white);
+  position: absolute;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.header__menu-icon {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.header__menu-icon::before {
+  top: -10px;
+}
+.header__menu-icon::after {
+  top: 10px;
+}
+
+.main__nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-orange-main);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.main__nav {
+  visibility: hidden;
+  opacity: 0;
+}
+.main__nav.is-open {
+  transform: translateX(0);
+  visibility: visible;
+  opacity: 1;
+  transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.2, 1), opacity 0.35s ease;
+}
+
+body.menu-open {
+  overflow: hidden;
+  height: 100vh;
+}
+
+.header__menu-toggle .header__menu-icon {
+  transition: background-color 0.2s;
+}
+.header__menu-toggle.is-open .header__menu-icon {
+  background-color: transparent;
+}
+.header__menu-toggle.is-open .header__menu-icon::before {
+  transform: translateY(10px) rotate(45deg);
+}
+.header__menu-toggle.is-open .header__menu-icon::after {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+.nav__link:focus {
+  outline: 3px solid rgba(255, 255, 255, 0.18);
+  outline-offset: 6px;
+}
+.main__nav ul {
+  list-style: none;
+  text-align: center;
+}
+.nav__item {
+  margin: 30px 0;
+}
+.nav__link {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-white);
+  transition: opacity 0.2s;
+}
+.nav__link:hover {
+  opacity: 0.8;
+}
+
+/* Header-specific responsive tweaks */
+@media (min-width: 600px) {
+  .header {
+    padding: 24px;
+  }
+  .header__page-title-text {
+    font-size: 2.4rem;
+  }
+  .nav__link {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header {
+    align-items: center;
+    padding: 40px;
+    padding-bottom: 80px;
+  }
+  .header__logo-title {
+    font-size: 1.6rem;
+  }
+  .header__page-title-text {
+    font-size: 3rem;
+  }
+  .main__nav {
+    position: relative;
+    transform: none;
+    background: transparent;
+    height: auto;
+    display: block;
+  }
+  .header__menu-toggle {
+    display: none;
+  }
+}
