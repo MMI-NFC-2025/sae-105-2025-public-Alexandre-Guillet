@@ -5,20 +5,26 @@
     <title>SAVOU'FEST</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="src/css/style.css" />
+    <script src="src/js/menu.js" defer></script>
   </head>
   <body>
     <header class="header">
-      <div class="header__logo-container">
+      <div class="header__logo-container header__logo">
         <h1 class="header__logo-title">SAVOU'FEST</h1>
         <div class="header__page-title">
           <h2 class="header__page-title-text">Accueil</h2>
         </div>
       </div>
-      <button class="header__menu-toggle" aria-label="Ouvrir le menu">
+      <button
+        class="menu-btn"
+        aria-label="Ouvrir le menu"
+        aria-expanded="false"
+        aria-controls="site-menu"
+      >
         <span class="header__menu-icon"></span>
       </button>
 
-      <nav class="main__nav">
+      <nav id="site-menu" class="menu" hidden>
         <ul>
           <li class="nav__item">
             <a href="index.html" class="nav__link">Accueil</a>
