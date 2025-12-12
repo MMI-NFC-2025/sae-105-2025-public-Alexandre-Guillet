@@ -1,3 +1,5 @@
+/*carousel d'images*/
+
 const carousel = document.querySelector(".carousel__container");
 const prevButton = document.querySelector(".carousel__button--prev");
 const nextButton = document.querySelector(".carousel__button--next");
@@ -14,3 +16,5 @@ if (carousel)
   nextButton.addEventListener("click", () => {
     carousel.scrollBy({ left: +scrollAmount, behavior: "smooth" });
   });
+
+/*Vous pouvez le trouver sur la page de DJ Phenix */

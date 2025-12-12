@@ -7,6 +7,7 @@
     <link rel="icon" href="assets/artgirl.webp" type="image/webp" />
     <link rel="stylesheet" href="src/css/style.css" />
     <script src="src/js/menu.js" defer></script>
+    <script src="src/js/faq.js" defer></script>
   </head>
   <body>
     <header class="header header--infos">
@@ -128,91 +129,76 @@
         </div>
       </section>
 
-      <section class="faq">
-        <h2 class="faq__title">Questions Fréquentes</h2>
+<section class="faq">
+  <h2 class="faq__title">Questions Fréquentes</h2>
 
-        <div class="faq__list">
-          <div class="faq__item">
-            <button
-              class="faq__question"
-              aria-expanded="false"
-              aria-controls="answer-1">
-              Peut-on entrer et sortir du Fest ?
-              <img class="faq__toggle-icon icon-arrow-down" src="assets/arrow-down.webp" alt="Icône flèche vers le bas" />
-            </button>
-            <div class="faq__answer" id="answer-1">
-              <p>
-                Oui, les sorties sont temporaires sont autorisées jusqu'à 22h00
-                chaque soir.
-              </p>
-            </div>
-          </div>
+  <div class="faq__list">
+    <details class="faq__item">
+      <summary class="faq__question">
+        Peut-on entrer et sortir du Fest ?
+        <img class="faq__toggle-icon" src="assets/arrow-down.webp" alt="Icône flèche vers le bas" />
+      </summary>
+      <div class="faq__answer">
+        <p>
+          Oui, les sorties sont temporaires sont autorisées jusqu'à 22h00
+          chaque soir.
+        </p>
+      </div>
+    </details>
 
-          <div class="faq__item">
-            <button
-              class="faq__question"
-              aria-expanded="false"
-              aria-controls="answer-2">
-              La nourriture est-elle autorisée ?
-              <img class="faq__toggle-icon icon-arrow-down" src="assets/arrow-down.webp" alt="Icône flèche vers le bas" />
-            </button>
-            <div class="faq__answer" id="answer-2">
-              <p>
-                Seules les petites collations et les bouteilles d'eau vides sont
-                permises à l'intérieur de l'enceinte.
-              </p>
-            </div>
-          </div>
+    <details class="faq__item">
+      <summary class="faq__question">
+        La nourriture est-elle autorisée ?
+        <img class="faq__toggle-icon" src="assets/arrow-down.webp" alt="Icône flèche vers le bas" />
+      </summary>
+      <div class="faq__answer">
+        <p>
+          Seules les petites collations et les bouteilles d'eau vides sont
+          permises à l'intérieur de l'enceinte.
+        </p>
+      </div>
+    </details>
 
-          <div class="faq__item">
-            <button
-              class="faq__question"
-              aria-expanded="false"
-              aria-controls="answer-3">
-              Quel est l'âge minimum ?
-              <img class="faq__toggle-icon icon-arrow-down" src="assets/arrow-down.webp" alt="Icône flèche vers le bas" />
-            </button>
-            <div class="faq__answer" id="answer-3">
-              <p>
-                Le festival est accessible à partir de 16 ans accompagné d'un
-                adulte. Les mineurs de moins de 16 ans ne sont pas acceptés.
-              </p>
-            </div>
-          </div>
+    <details class="faq__item">
+      <summary class="faq__question">
+        Quel est l'âge minimum ?
+        <img class="faq__toggle-icon" src="assets/arrow-down.webp" alt="Icône flèche vers le bas" />
+      </summary>
+      <div class="faq__answer">
+        <p>
+          Le festival est accessible à partir de 16 ans accompagné d'un
+          adulte. Les mineurs de moins de 16 ans ne sont pas acceptés.
+        </p>
+      </div>
+    </details>
 
-          <div class="faq__item">
-            <button
-              class="faq__question"
-              aria-expanded="false"
-              aria-controls="answer-4">
-              Paiements par carte ?
-              <img class="faq__toggle-icon icon-arrow-down" src="assets/arrow-down.webp" alt="Icône flèche vers le bas" />
-            </button>
-            <div class="faq__answer" id="answer-4">
-              <p>
-                Tous les stands (nourriture, boissons, merchandising) acceptent
-                les paiements par carte bancaire (NFC et puce).
-              </p>
-            </div>
-          </div>
+    <details class="faq__item">
+      <summary class="faq__question">
+        Paiements par carte ?
+        <img class="faq__toggle-icon" src="assets/arrow-down.webp" alt="Icône flèche vers le bas" />
+      </summary>
+      <div class="faq__answer">
+        <p>
+          Tous les stands (nourriture, boissons, merchandising) acceptent
+          les paiements par carte bancaire (NFC et puce).
+        </p>
+      </div>
+    </details>
 
-          <div class="faq__item">
-            <button
-              class="faq__question"
-              aria-expanded="false"
-              aria-controls="answer-5">
-              Des consignes pour les bagages ?
-              <img class="faq__toggle-icon icon-arrow-down" src="assets/arrow-down.webp" alt="Icône flèche vers le bas" />
-            </button>
-            <div class="faq__answer" id="answer-5">
-              <p>
-                Oui, un service de consigne est disponible à l'entrée principale
-                du festival pour un tarif de 5€ par jour.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+    <details class="faq__item">
+      <summary class="faq__question">
+        Des consignes pour les bagages ?
+        <img class="faq__toggle-icon" src="assets/arrow-down.webp" alt="Icône flèche vers le bas" />
+      </summary>
+      <div class="faq__answer">
+        <p>
+          Oui, un service de consigne est disponible à l'entrée principale
+          du festival pour un tarif de 5€ par jour.
+        </p>
+      </div>
+    </details>
+  </div>
+</section>
           <footer class="footer">
       <div class="footer__content">
         <h2 class="footer__title">SAVOU'FEST</h2>

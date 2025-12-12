@@ -22,4 +22,9 @@
   --genre-hiphop: #fd79a8;
   --genre-pop: #00b894;
   --genre-rock: #d63031;
+  /* Common semantic variables expected by components */
+  --primary-color: var(--color-orange-main);
+  --card-background: var(--color-white);
+  --text-color-dark: var(--color-gray-dark);
+  --text-color-light: #6b6b6b;
 }

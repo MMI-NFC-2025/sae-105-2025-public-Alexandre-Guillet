@@ -406,13 +406,11 @@
 /* --- Header Spécifique Artistes (Fond Orange) --- */
 .header--artistes {
   background-color: var(--color-orange-main);
-  background-image: url("assets/artistes-bg.jpg");
 }
 
 /* --- Header Spécifique Contact --- */
 .header--contact {
   background-color: var(--color-orange-main);
-  background-image: url("assets/contact-bg.jpg");
 }
 
 /* --- Section Coordonnées --- */
@@ -492,7 +490,7 @@
 .contact-form__input:focus,
 .contact-form__select:focus,
 .contact-form__textarea:focus {
-  border-color: var(--color-orange-main);
+  border-color: var(--color-white);
   outline: none;
   box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.2);
 }
@@ -500,7 +498,6 @@
 .contact-form__submit-button {
   display: block;
   width: 100%;
-  background-color: var(--color-orange-main);
   color: var(--color-white);
   border: none;
   padding: 15px 20px;
@@ -513,7 +510,7 @@
 }
 
 .contact-form__submit-button:hover {
-  background-color: #e87b00;
+  background-color: var(--color-white);
 }
 
 .cards-grid {
@@ -525,6 +522,7 @@
 
 .cards-grid .card {
   padding: 0;
+  width: 100%;
   position: relative;
   overflow: hidden;
 }
@@ -543,7 +541,6 @@
 }
 
 .cards-grid .card__body {
-  position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -569,7 +566,6 @@
 }
 
 .cards-grid .event-card__genre-pill {
-  position: absolute;
   top: 15px;
   right: 15px;
   z-index: 10;
